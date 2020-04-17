@@ -312,6 +312,7 @@ while True:
 
                 print("Encryption Constant: " + str(hex(ec)))
                 print("pid: " + str(hex(pid)))
+    time.sleep(1)
 
                 
         print("Awaiting inputs...")
