@@ -226,9 +226,14 @@ print("Awaiting inputs...")
 
 
 while True:
-    fileIn = open("communicate.bin", "rb")
-    fileIn.seek(0)
-    tradeState = int(fileIn.read()[0])
+    try:
+
+        fileIn = open("communicate.bin", "rb")
+        fileIn.seek(0)
+        tradeState = int(fileIn.read()[0])
+    except IndexError:
+        print("Read file too fast, trying again.")
+        tradeState = 0
     
     if tradeState == 1:
         print("Bot initialized!")
