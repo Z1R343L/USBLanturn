@@ -213,8 +213,8 @@ def initiateTrade():
     time.sleep(0.7)
 
     #Just to be safe since this is a very important part
-    sendCommand(f"poke 0x2E32209A 0x00000000")
-    sendCommand(f"poke 0x2E322064 0x00000000")
+    sendCommand(f"poke 0x2F7240A0 0x00000000")
+    sendCommand(f"poke 0x2F724084 0x00000000")
 
 #Start up program and clean up necessary files
 attemptConnection()
@@ -258,7 +258,7 @@ while True:
 
         start = time.time()
         while True:
-            sendCommand("peek 0x2E322064 4")
+            sendCommand("peek 0x2F724084 4")
             tradeCheck = readData()
             tradeCheck = int(convertToString(tradeCheck), 16)
             end = time.time()
@@ -275,7 +275,7 @@ while True:
         if canTrade:
             start = time.time()
             while True:
-                sendCommand("peek 0x2E32209A 4")
+                sendCommand("peek 0x2F7240A0 4")
                 memCheck = readData()
                 memCheck = int(convertToString(memCheck), 16)
                 #print(memCheck)
@@ -292,7 +292,7 @@ while True:
             
             if canTrade:
                 exitTrade()
-                sendCommand("peek 0x2E32206A 328")
+                sendCommand("peek 0x2F72408A 328")
                 time.sleep(0.5)
 
                 ek8 = readData()
